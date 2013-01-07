@@ -65,9 +65,9 @@ prompt() {
 
     # nice prompt
     case "`id -u`" in
-        0) PS1="${TITLEBAR}┌─[$my_ps_date $my_ps_time][$my_ps_root][$my_ps_host]$(modern_scm_prompt)$(__my_rvm_ruby_version)[${cyan}\w${normal}]$(is_vim_shell)\n└─▪ "
+        0) PS1="${TITLEBAR}┌─[$my_ps_date $my_ps_time][$my_ps_root@$my_ps_host]$(modern_scm_prompt)$(__my_rvm_ruby_version)[${cyan}\w${normal}]$(is_vim_shell)\n└─▪ "
         ;;
-        *) PS1="${TITLEBAR}┌─[$my_ps_date $my_ps_time][$my_ps_user][$my_ps_host]$(modern_scm_prompt)$(__my_rvm_ruby_version)[${cyan}\w${normal}]$(is_vim_shell)\n└─▪ "
+        *) PS1="${TITLEBAR}┌─[$my_ps_date $my_ps_time][$my_ps_user@$my_ps_host]$(modern_scm_prompt)$(__my_rvm_ruby_version)[${cyan}\w${normal}]$(is_vim_shell)\n└─▪ "
         ;;
     esac
 }
