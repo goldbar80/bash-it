@@ -70,6 +70,9 @@ prompt() {
         *) PS1="${TITLEBAR}┌─[$my_ps_date $my_ps_time][$my_ps_user@$my_ps_host]$(modern_scm_prompt)$(__my_rvm_ruby_version)[${cyan}\w${normal}]$(is_vim_shell)\n└─▪ "
         ;;
     esac
+
+    #update PS1
+    PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
 }
 
 PS2="└─▪ "
